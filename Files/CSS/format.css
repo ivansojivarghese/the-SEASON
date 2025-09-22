@@ -1,0 +1,620 @@
+body {
+	width: 1150px;
+	height: 600px;
+	overflow: hidden;
+	position: fixed;
+}
+
+body > div { /*selects section elements which has the body element as its parent*/
+	width: 1100px;
+	height: 100%;
+	/*background-color: #E4E4E4;*/
+	position: absolute;
+	left: 25px;
+	z-index: 10;
+	display: none; /*only 1 page displayed at any time*/
+}
+
+#conPg {
+	width: 100%;
+	position: static;
+}
+
+div, table {
+	position: absolute;
+}
+
+body, h1, h2, p, ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	font-size: 25px;
+	margin-top: 10px;
+}
+
+ul, li {
+	margin-left: 20px;
+}
+
+table {
+	width: 700px;
+}
+
+td {
+    text-align: center;
+    width: 60px;
+	padding: 0;
+}
+
+.noView { /*not displayed in view*/
+	display: none;
+}
+
+.inView { /*displayed in view*/
+	display: block;
+}
+
+.mainPgContent {
+	width: 100%;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.options { /*all buttons/options in game*/
+	cursor: pointer;
+}
+
+.pgMargin { /*page margin*/
+	width: 100%;
+}
+
+.pgMargin h1 { /*headers*/
+    line-height: 50px;
+	padding-top: 25px;
+}
+
+.pgMargin .options {
+    width: 250px;
+    height: 100%;
+}
+
+.pgMargin .options p {
+    padding: 0 0 25px 50px;
+}
+
+.pgMargin:first-child { /*used as headers*/
+	top: 0;
+	height: 75px;
+}
+
+.pgMargin:last-child { /*used for navigation*/
+	bottom: 0;
+	height: 50px;
+}
+
+.nRgt {
+	right: 0;
+}
+
+.nBtm {
+	bottom: 0;
+}
+
+.transX {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.transY {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.transX.transY { /*positioned to middle*/
+	transform: translate(-50%, -50%);
+}
+
+
+
+/* ------------ ERROR PAGE STYLING ----------------------*/
+
+#noJS {
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	background-color: #FFF;
+}
+
+#errorPg {
+	z-index: 500;
+}
+
+#errorPg h1 {
+	margin-bottom: 20px;
+}
+
+#errorPg p {
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+
+
+
+/* ------------- MAIN MENU PAGE STYLING ----------------- */
+
+
+
+
+#mainPg .mainPgContent {
+	width: 40%;
+	height: 100%;
+}
+
+#mainPg .mainPgContent:first-child { /*first child of parent element with 'mainPgContent' as class name*/
+	width: 60%;
+	left: 0;
+	text-align: center;
+}
+
+#mainPg .mainPgContent:last-child {
+    width: 40%;
+}
+
+#mainPg .wrapper {
+	width: 100%;
+	height: 50%;
+}
+
+#mainPg .wrapper:last-child {
+    bottom: 0px;
+}
+
+#mainPg h1 {
+	bottom: 30px;
+	position: absolute;
+}
+
+#mainPg .options {
+	width: 250px;
+	height: 50px;
+	top: 50px;
+}
+
+#mainPg .options:nth-child(1) {
+    left: 40px;
+}
+
+#mainPg .options:nth-child(2) {
+	right: 40px;
+}
+
+#mainPg .options:nth-child(3) {
+    left: 205px;
+    top: 200px;
+}
+
+.circle {
+	width: 150px;
+	height: 150px;
+	border: 30px solid;
+	border-radius: 50%;
+}
+
+#mainPg .circle { /*element will animate through team colors*/
+    animation: 8s backColChange ease infinite; /*duration depends on no. of teams; dur = no. of teams * 2*/
+}
+
+@keyframes backColChange {
+	0% {
+		border-color: #808080; /*grey*/
+	} 25% { /*2 sec*/
+		border-color: #0000FF; /*dark blue*/
+	} 50% { /*4 sec*/
+		border-color: #87CEEB; /*light blue*/
+	} 75% { /*6 sec*/
+		border-color: #008000; /*green*/
+	} 100% { /*8 sec*/
+		border-color: #808080; /*grey; back to original*/
+	}
+}
+
+
+
+/* ------------- GAME MENU PAGE STYLING ----------------- */
+
+
+
+#gmMenPg .mainPgContent {
+	height: 550px;
+}
+
+#gmMenPg .mainPgContent .options {
+    width: 475px;
+    height: 225px;
+	top: 25px;
+	text-align: center;
+}
+
+#gmMenPg .mainPgContent .options:first-child {
+    left: 50px;
+}
+
+#gmMenPg .options:nth-child(2) {
+    right: 50px;
+}
+
+#gmMenPg .options:nth-child(3) {
+	width: 600px;
+    bottom: 25px;
+    left: 250px;
+    top: auto;
+}
+
+
+
+/* ------------- PLAY DETAILS PAGE STYLING ----------------- */
+
+
+
+#plyDetPg .pgMargin:first-child {
+	text-align: center;
+}
+
+#plyDetPg .mainPgContent {
+	height: 450px;
+	top: 100px;
+}
+
+#plyDetPg .wrapper {
+	width: 500px;
+	height: 100%;
+	text-align: center;
+}
+
+#plyDetPg .wrapper:nth-child(2) {
+    width: 100px;
+	left: 500px;
+}
+
+#plyDetPg .wrapper .container:nth-child(2) {
+    height: 210px;
+    top: 60px;
+}
+
+#plyDetPg .wrapper .container:last-child {
+    top: 290px;
+}
+
+#plyDetPg .wrapper :nth-child(odd).container { /*odd-numbered child elements*/
+    height: auto;
+}
+
+.multiNav .options:last-child {
+	right: 0;
+}
+
+.multiNav .options:last-child p {
+    text-align: right;
+    padding-right: 50px;
+    padding-left: 0px;
+}
+
+
+
+
+/* ------------- TABLE PAGE STYLING ----------------- */
+
+
+
+
+#tabPg table {
+	height: 240px;
+	left: 200px;
+	top: 50px;
+	border-collapse: collapse;
+}
+
+#tabPg td:nth-child(2) { /*gives space for team names*/
+    text-align: left;
+	width: auto;
+}
+
+
+
+
+/* ------------- FIXTURES/RESULTS PAGE STYLING ----------------- */
+
+
+
+
+#fixResPg .mainPgContent {
+	width: 700px;
+	height: 450px;
+	top: 50px;
+	left: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#fixResPg table {
+	height: auto;
+	width: 100%;
+}
+
+#fixResPg tbody td:last-child {
+    text-align: right;
+}
+
+#fixResPg tbody td:first-child, #fixResPg thead td {
+    text-align: left;
+}
+
+
+
+
+/* ------------- CONSOLE PAGE STYLING ----------------- */
+
+
+
+#iBanner {
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: transparent;
+}
+
+#mRes {
+	display: none;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: #FFF;
+}
+
+#mRes .container {
+	top: 200px;
+	left: 150px;
+	width: auto;
+	height: auto;
+}
+
+#mRes .container.nRgt {
+	right: 150px;
+	left: auto;
+}
+
+#mRes h1 {
+	position: absolute;
+	font-size: 80px;
+}
+
+#mRes h2 {
+	font-size: 60px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#mRes p {
+	position: absolute;
+	/*! bottom: 50px; */
+}
+
+#conPg .transX.transY {
+	z-index: 50;
+	width: 650px;
+	text-align: center;
+}
+
+#conPg .mainPgContent {
+	width: 100%;
+	height: 550px;
+	top: 50px;
+}
+
+.op {
+	opacity: .25;
+}
+
+#pauseButton {
+	width: 100px;
+	height: 20px;
+	padding: 16px 0px 14px;
+	cursor: pointer;
+}
+
+#pauseButton:hover .stroke {
+  background-color: #808080;
+}
+
+#pauseButton .transX {
+    width: 15px;
+    height: 20px;
+}
+
+.stroke {
+	height: 100%;
+	width: 5px;
+	background-color: #303030;
+	border-radius: 10px;
+}
+
+#conPg .wrapper {
+	height: 100%;
+	width: 500px;
+}
+
+#conPg .wrapper p {
+    position: absolute;
+}
+
+#conPg .pgMargin {
+	height: 50px;
+}
+
+.wid { /*small width and center alignment for scores*/
+	width: 100px;
+	text-align: center;
+}
+
+.rgt {
+	right: 150px;
+}
+
+.lft {
+	left: 150px;
+}
+
+#gameArea {
+	width: 1100px;
+	height: 100%;
+	/*top: 50px;*/
+	left: 25px;
+	background-color: #E4E4E4;
+	/*border: solid #303030;
+	border-width: 5px;*/
+	overflow: hidden;
+}
+
+#conPg .circle {
+	width: 50px;
+	height: 50px;
+	border-width: 10px;
+	display: block;
+	z-index: 15;
+	/*border-radius: 0; developer*/
+}
+/*
+
+#usPly2 {
+	transform: translate(380px, 380px);
+}
+
+#comPly1 {
+	transform: translate(650px, 100px);
+}
+
+#comPly2 {
+	transform: translate(650px, 380px);
+}
+*/
+#conPg #matchBall {
+	width: 30px;
+	height: 30px;
+	background-color: #FF0000;
+	border-width: 0px;
+	z-index: 10;
+	/*transform: translate(535px, 260px);*/
+}
+/*
+.psTrans { /*ball transition when passing
+	transition: all 0.3s ease;
+}
+*/
+.goal {
+	width: 20px;
+	height: calc(550px / 3);
+	background-color: #E4E4E4;
+	border: solid #303030;
+	border-width: 5px 0 5px 5px;
+	z-index: 5;
+}
+
+.goal.nRgt {
+	border-width: 5px 5px 5px 0;
+}
+
+#pauseMenu {
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	display: none;
+}
+
+#pauseMenu h1 {
+	position: absolute;
+	left: 200px;
+	font-size: 80px;
+	cursor: pointer;
+}
+
+#pauseMenu h1:hover {
+	color: #808080;
+}
+
+#pauseMenu .nRgt {
+	right: 200px;
+	left: auto;
+}
+
+.goalDtc {
+	width: 40px;
+	border: none;
+	background: #FFF;
+	z-index: 15;
+	left: -40px;
+}
+
+.goalDtc.nRgt {
+	right: -40px;
+	left: auto;
+}
+
+
+
+
+
+/* ------------- INSTRUCTIONS PAGE STYLING ----------------- */ 
+
+
+
+
+
+#insPg .wrapper {
+  width: 100%;
+	height: 550px;
+	top: 0;
+	overflow-y: auto;
+}
+
+#insPg .wrapper h1, #insPg .wrapper p {
+	margin-left: 50px;
+}
+
+#insPg .wrapper h1 {
+	margin-top: 20px;
+}
+
+#insPg .wrapper p {
+  padding: 0;
+	margin-top: 25px; 
+  font-size: 23px;
+}
+
+
+
+
+
+/* --------------- CREDITS PAGE STYLING -----------------*/
+
+
+
+
+
+#crePg .wrapper {
+  width: 100%;
+	height: 550px;
+	top: 0;
+	overflow: auto;
+}
+
+#crePg .wrapper p {
+	margin-left: 50px;
+	margin-top: 25px;
+	padding: 0;
+}

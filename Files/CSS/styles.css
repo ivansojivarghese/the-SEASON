@@ -1,0 +1,76 @@
+h1, h2, p, ul, td {
+	/*font-family: "Candara", "Segoe UI", sans-serif;*/
+	font-family: "Segoe UI", sans-serif;
+	font-weight: 400;
+	color: #303030;
+}
+
+h1 {
+	font-size: 60px;
+}
+
+h2 {
+	font-size: 40px;
+	line-height: 40px;
+}
+
+p {
+    font-size: 30px;
+    line-height: 30px;
+    padding: 10px 0px;
+}
+
+thead tr {
+	font-size: 40px;
+	height: 80px;
+}
+
+tbody tr {
+	height: 40px;
+	font-size: 20px;
+}
+
+tr.uX { /*user experience feature - contrast*/
+	background-color: #303030;
+}
+
+tr.uX td {
+	color: #FFF;
+}
+
+#mainPg h1 span {
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+.pgMargin p {
+	line-height: 25px;
+	padding: 12.5px 0px;
+}
+
+#gmMenPg h2 {
+	font-size: 100px;
+	line-height: 100px;
+	padding: 62.5px 0;
+	width: 100%;
+}
+
+.options:hover p, .options:hover h2 { /*change to light-grey color on hover*/
+	color: #808080;
+}
+
+.slateCol { /*color of team 'slate'*/
+	border-color: #808080; /*grey*/
+}
+
+.oceanCol {
+	border-color: #0000FF; /*dark blue*/
+}
+
+.skyCol {
+	border-color: #87CEEB; /*light blue*/
+}
+
+.leafCol {
+	border-color: #008000; /*light green*/
+}

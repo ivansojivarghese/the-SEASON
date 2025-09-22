@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>theSEASON</title>
+    <!-- formatting -->
+    <link href="Files/CSS/format.css" type="text/css" rel="stylesheet">
+    <!-- styling -->
+		<link href="Files/CSS/styles.css" type="text/css" rel="stylesheet">
+	</head>
+	<body class="transX transY" onload="browserChk()">
+			<!-- if JS disabled -->
+			<noscript>
+				<div id="noJS">
+					<p>enable JavaScript to continue...</p>
+				</div>
+			</noscript>
+			<!-- error page (if browser is IE) -->
+			<div id="errorPg">
+				<h1>sorry... IE is now history...</h1>
+				<p>try:</p>
+				<ul>
+					<li>Chrome</li>
+					<li>Firefox</li>
+					<li>Edge</li>
+				</ul>
+			</div>
+			<!-- main page -->
+			<div id="mainPg" class="pg inView">
+				<!-- title and options -->
+				<div class="mainPgContent">
+					<div class="wrapper">
+						<!-- game title -->
+						<h1 class="transX">the<span>season</span></h1>
+					</div>
+					<div class="wrapper">
+							<div class="container">
+								<div class="options" onclick="gmNav(event, pages[1])"> <!-- to game menu page -->
+									<p>play</p>
+								</div>
+								<div class="options" onclick="gmNav(event, pages[6])">
+									<p>instructions</p>
+								</div>
+								<div class="options" onclick="gmNav(event, pages[7])">
+									<p>credits</p>
+								</div>
+							</div>
+					</div>
+				</div>
+				<!-- animating circle -->
+				<div class="mainPgContent nRgt">
+					<div class="circle transX transY"></div>
+				</div>
+			</div>
+  			<!-- game menu page -->
+   			<div id="gmMenPg" class="pg">
+            	<!-- user options -->
+           		<div class="mainPgContent">
+					<div class="options" onclick="gmNav(event, pages[2])"> <!-- to game details page -->
+                         <h2>play</h2>
+					</div>
+					<div class="options" onclick="gmNav(event, pages[3])"> <!-- to table page -->
+                         <h2>table</h2>
+					</div>
+					<div class="options" onclick="gmNav(event, pages[4])"> <!-- to fixtures/results page -->
+                        <h2>fixtures/results</h2>
+					</div>
+        		</div>
+                <!-- navigation -->
+				<div class="pgMargin">
+					<div class="options" onclick="gmNav(event, pages[0])"> <!-- to main menu page -->
+						<p>back</p>
+					</div>
+				</div>
+			</div>
+			<!-- game details page -->
+			<div id="plyDetPg" class="pg">
+				<!-- round no. -->
+				<div class="pgMargin">
+					<h1>Round <span id="rndNum"></span></h1>
+				</div>
+				<!-- details -->
+				<div class="mainPgContent">
+					<!-- home team -->
+					<div class="wrapper">
+						<div class="container">
+							<h2 id="plDtTmHm">ocean</h2>
+						</div>
+						<div class="container">
+							<div id="plyDetHmCir" class="hm circle oceanCol transX"></div>
+						</div>
+						<div class="container">
+							<h2 id="hmTmPosRnk"><span>2</span><sup>nd</sup></h2>
+						</div>
+					</div>
+					<!-- vs -->
+					<div class="wrapper">
+						<h2>vs</h2>
+					</div>
+					<!-- away team -->
+					<div class="wrapper nRgt">
+						<div class="container">
+							<h2 id="plDtTmAw">slate</h2>
+						</div>
+						<div class="container">
+							<div id="plyDetAwCir" class="aw circle slateCol transX"></div>
+						</div>
+						<div class="container">
+							<h2 id="awTmPosRnk"><span>1</span><sup>st</sup></h2>
+						</div>
+					</div>
+				</div>
+				<!-- navigation -->
+				<div class="pgMargin multiNav">
+					<div class="options" onclick="gmNav(event, pages[1])"> <!-- to game menu page -->
+						<p>back</p>
+					</div>
+					<div class="options" onclick="gmNav(event, pages[5])"> <!-- to console page -->
+						<p>next</p>
+					</div>
+				</div>
+			</div>
+			<!-- team standings (table) -->
+			<div id="tabPg" class="pg">
+				<table>
+					<thead>
+						<tr>
+							<td>#</td>
+							<td>team</td>
+							<td>gp</td>
+							<td>w</td>
+							<td>d</td>
+							<td>l</td>
+							<td>gf</td>
+							<td>ga</td>
+							<td>gd</td>
+							<td>pts</td>
+						</tr>
+					</thead>
+					<tbody id="tb">
+						<!-- 1st placed -->
+						<tr class="uX">
+							<td></td>
+							<td>slate</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<!-- 2nd placed -->
+						<tr>
+							<td></td>
+							<td>ocean</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<!-- 3rd placed -->
+						<tr>
+							<td></td>
+							<td>sky</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<!-- 4th placed -->
+						<tr>
+							<td></td>
+							<td>leaf</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- navigation -->
+				<div class="pgMargin multiNav">
+
+					<div class="options" onclick="gmNav(event, pages[1])"> <!-- to game memu page -->
+						<p>back</p>
+					</div>
+
+					<!-- to be disabled later -->
+					<div style="display: none;" class="options" onclick="gmNav(event, pages[2])"> <!-- to game details page -->
+						<p>next</p>
+					</div>
+
+				</div>
+			</div>
+			<!-- fixtures and results -->
+			<div id="fixResPg" class="pg">
+				<div class="mainPgContent">
+					<table id="fixResTab">
+						<thead>
+							<tr>
+								<td colspan="3">Round 1</td>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- match 1 -->
+							<tr class="otherMch">
+								<td>leaf</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>sky</td>
+							</tr>
+							<!-- match 2 -->
+							<tr class="slateMch">
+								<td>ocean</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>slate</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<td colspan="3">Round 2</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="slateMch">
+								<td>slate</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>leaf</td>
+							</tr>
+							<tr class="otherMch">
+								<td>ocean</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>sky</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<td colspan="3">Round 3</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="otherMch">
+								<td>leaf</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>ocean</td>
+							</tr>
+							<tr class="slateMch">
+								<td>slate</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>sky</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<td colspan="3">Round 4</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="otherMch">
+								<td>sky</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>leaf</td>
+							</tr>
+							<tr class="slateMch">
+								<td>slate</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>ocean</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<td colspan="3">Round 5</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="slateMch">
+								<td>leaf</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>slate</td>
+							</tr>
+							<tr class="otherMch">
+								<td>sky</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>ocean</td>
+							</tr>
+						</tbody>
+						<thead>
+							<tr>
+								<td colspan="3">Round 6</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="otherMch">
+								<td>ocean</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>leaf</td>
+							</tr>
+							<tr class="slateMch">
+								<td>sky</td>
+								<td>-</td>
+								<td>vs</td>
+								<td>-</td>
+								<td>slate</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- navigation -->
+				<div class="pgMargin multiNav">
+
+					<div class="options" onclick="gmNav(event, pages[1])"> <!-- to game menu page -->
+						<p>back</p>
+					</div>
+
+					<!-- to be disabled later -->
+					<div style="display: none;" class="options" onclick="gmNav(event, pages[3])"> <!-- to table page -->
+						<p>next</p>
+					</div>
+
+				</div>
+			</div>
+			<!-- game console -->
+			<div id="conPg" class="pg">
+				<!-- pause menu -->
+				<div id="pauseMenu">
+					<!-- 'quit' -->
+					<h1 class="transY" onclick="gmNav(event, pages[0])">quit</h1>
+					<!-- 'resume' -->
+					<h1 class="transY nRgt" onclick="resume()">resume</h1>
+				</div>
+				<!-- game initiation 'banner' -->
+				<div id="iBanner" class="conElm">
+					<div id="intBanner" class="transX transY">
+						<h1>press any key to start</h1>
+					</div>
+				</div>
+				<!-- match result  -->
+				<div id="mRes">
+					<!-- show a summary of match -->
+					<h1 class="transX">game over</h1>
+					<!-- home -->
+					<div class="container">
+						<h2 id="sumHomeNm">""</h2>
+						<h2 id="sumHm"></h2>
+					</div>
+					<!-- away -->
+					<div class="container nRgt">
+						<h2 id="sumAwayNm">""</h2>
+						<h2 id="sumAw"></h2>
+					</div>
+					<!-- <p class="transX">refresh the browser to play again</p> -->
+					<!-- navigation -->
+
+					<div class="pgMargin multiNav">
+						<div class="options" onclick="gmNav(event, pages[4])"> <!-- to fix/res page -->
+							<p>next</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- game scores and time -->
+				<div id="conMargin" class="pgMargin conElm">
+					<!-- home team -->
+					<div class="wrapper">
+						<!-- pause button -->
+						<div id="pauseButton" onclick="pause()">
+							<div class="transX">
+								<div class="stroke"></div>
+								<div class="stroke nRgt"></div>
+							</div>
+						</div>
+						<p id="hmName" class="lft">ocean</p>
+						<p id="hmScre" class="wid rgt">0</p>
+					</div>
+					<!-- game timer -->
+					<div class="container wid transX">
+						<p id="gameTimer"></p>
+					</div>
+					<!-- away team -->
+					<div class="wrapper nRgt">
+						<p id="awScre" class="wid lft">0</p>
+						<p id="awName" class="rgt">slate</p>
+					</div>
+				</div>
+				<!-- gameplay area -->
+				<div class="mainPgContent conElm">
+					<div id="gameArea">
+						<!-- user player markers -->
+						<div id="usPly1" class="user aw circle slateCol">
+						</div>
+						<div id="usPly2" class="user aw circle slateCol">
+						</div>
+						<!-- computer player markers -->
+						<div id="comPly1" class="com hm circle oceanCol">
+						</div>
+						<div id="comPly2" class="com hm circle oceanCol">
+						</div>
+					</div>
+					<!-- match ball -->
+					<div id="matchBall" class="circle"></div>
+					<!-- goals -->
+					<!-- home -->
+					<div class="goal transY"></div>
+					<!-- away -->
+					<div class="goal transY nRgt"></div>
+					<!-- goal detectors -->
+					<!-- home -->
+					<div class="goal transY goalDtc"></div>
+					<!-- away -->
+					<div class="goal transY goalDtc nRgt"></div>
+					<!-- bounce detectors
+					<div class="goal bncDtc"></div>
+					<div class="goal bncDtc nBtm"></div>
+					<div class="goal bncDtc nRgt"></div>
+					<div class="goal bncDtc nRgt nBtm"></div> -->
+				</div>
+			</div>
+			<!-- game instructions -->
+			<div id="insPg" class="pg">
+
+				<div class="wrapper">
+					<h1>general</h1>
+					<p>this a soccer game, with 2 players in a team, no goalkeeper, and only 1 minute of game-time per match. you are in control of the team, 'slate'. 'slate' is of a greyish color. you are competing against 3 other teams.</p>
+					<h1>controls</h1>
+					<p>use the arrow keys to move your player, up, down, left and right respectively. press 'z' to pass the ball to your teamate, and 'x' to shoot the ball towards the goal.</p>
+					<p>the player that moves according to your controls is the player that is currently targeted.</p>
+				</div>
+
+				<!-- navigation -->
+				<div class="pgMargin">
+					<div class="options" onclick="gmNav(event, pages[0])"> <!-- to main menu page -->
+						<p>back</p>
+					</div>
+				</div>
+
+			</div>
+			<!-- game credits -->
+			<div id="crePg" class="pg">
+
+				<div class="wrapper">
+					<p>designed and developed by Ivan Varghese</p>
+					<p>&copy; 2018</p>
+				</div>
+
+				<!-- navigation -->
+				<div class="pgMargin">
+					<div class="options" onclick="gmNav(event, pages[0])"> <!-- to main menu page -->
+						<p>back</p>
+					</div>
+				</div>
+			</div>
+      <!-- JavaScript files -->
+			<!-- load -->
+			<script src="Files/JavaScript/load.js"></script>
+			<!-- game navigation -->
+			<script src="Files/JavaScript/nav.js"></script>
+			<!-- game load -->
+			<script src="Files/JavaScript/pos.js"></script>
+			<!-- game initiation -->
+			<script src="Files/JavaScript/int.js"></script>
+			<!-- game loops -->
+			<script src="Files/JavaScript/loop.js"></script>
+			<!-- game arrow key functions -->
+			<script src="Files/JavaScript/key.js"></script>
+			<!-- collision detection -->
+			<script src="Files/JavaScript/ball.js"></script>
+			<!-- game timer -->
+			<script src="Files/JavaScript/timer.js"></script>
+			<!-- computer (AI) players -->
+			<script src="Files/JavaScript/com.js"></script>
+			<!-- attack -->
+			<script src="Files/JavaScript/atk.js"></script>
+			<!-- game pausing -->
+			<script src="Files/JavaScript/pse.js"></script>
+			<!-- game reset -->
+			<script src="Files/JavaScript/rst.js"></script>
+			<!-- game end -->
+			<script src="Files/JavaScript/end.js"></script>
+			<!-- game difficulty increase -->
+			<script src="Files/JavaScript/dif.js"></script>
+			<!-- game table -->
+			<script src="Files/JavaScript/tab.js"></script>
+			<!-- game table team update functions -->
+			<script src="Files/JavaScript/tabSec.js"></script>
+			<!-- table sorting -->
+			<script src="Files/JavaScript/srt.js"></script>
+			<!-- other functions -->
+			<script src="Files/JavaScript/mds.js"></script>
+
+
+		<!--
+		<script src="Files/JavaScript/gameVar.js"></script>
+		<script src="Files/JavaScript/soundPlay.js"></script>
+		<script src="Files/JavaScript/displayMenu.js"></script> -->
+
+	</body>
+</html>
